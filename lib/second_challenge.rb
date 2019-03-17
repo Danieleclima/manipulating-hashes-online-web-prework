@@ -1,4 +1,5 @@
 require "pry"
+
 def second_challenge
   groceries = {
    dairy: ["milk", "yogurt", "cheese"],
@@ -6,7 +7,5 @@ def second_challenge
    meat: ["chicken", "steak", "salmon"],
    grains: ["rice", "pasta"]
   }
-
-  new_array = groceries.values
-  new_array.flatten
+  return groceries.values.flatten
 end

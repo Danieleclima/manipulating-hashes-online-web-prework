@@ -1,3 +1,5 @@
+require "pry"
+
 def first_challenge
   contacts = {
     "Jon Snow" => {
@@ -13,13 +15,14 @@ def first_challenge
     }
   }
 
-  contacts.each do |person, data|
-    data.each do |attribute, value|
-      if attribute==:favorite_icecream_flavors
-        value.delete_if {|flavor| flavor=="strawberry"}
-       
-      end 
-    end 
-  end 
-  contacts
+contacts.map do |person, value|
+  value.map do |attribute, result|
+    if attribute == :favorite_icecream_flavors
+      result.delete_if do |flavor|
+        flavor == "strawberry"
+      end
+    end
+  end
+end
+return contacts
 end
